@@ -1,0 +1,34 @@
+-- EXERCÍCIOS AULA 1 PARTE 2
+
+-- 9
+UPDATE cidadesBrasil SET populacao = 900000
+	WHERE nomeCidade = 'Campo Grande';
+	
+	
+-- 10
+UPDATE cidadesBrasil SET idhm = 0.81
+	WHERE nomeCidade = 'Palmas';
+	
+	
+-- 11
+UPDATE cidadesBrasil SET idhm = 0.77
+	WHERE nomeCidade = 'Salvador';
+	
+UPDATE cidadesBrasil SET escolarizacao = 0.96
+	WHERE nomeCidade = 'Salvador';
+
+
+-- 12
+DELETE FROM cidadesBrasil
+	WHERE idhm < 0.6;
+	
+	
+-- 13
+DELETE FROM cidadesBrasil
+	WHERE populacao < 20000;
+	
+	
+-- 14
+DELETE FROM cidadesBrasil
+	WHERE idhm < 0.7 AND regiao = 'Sudeste';
+

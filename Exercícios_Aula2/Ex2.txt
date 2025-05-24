@@ -1,0 +1,39 @@
+-- 2)
+
+-- Tabela Proprietário
+CREATE TABLE proprietário
+(
+	cod_propri INTEGER,
+	nome VARCHAR (40),
+	CONSTRAINT pk_proprietario PRIMARY KEY (cod_propri)
+);
+
+
+-- Tabela Veículo
+CREATE TABLE veiculo
+(
+	placa VARCHAR (15),
+	modelo VARCHAR (30),
+	ano_fabricacao DATE,
+	CONSTRAINT pk_veiculo PRIMARY KEY (placa)
+);
+
+
+-- Tabela Físico
+CREATE TABLE físico
+(
+	cod_propri INTEGER,
+	cpf VARCHAR (15),
+	CONSTRAINT pk_fisico PRIMARY KEY (cod_propri),
+	CONSTRAINT fk_propriFis FOREIGN KEY (cod_propri) REFERENCES proprietário
+);
+
+
+-- Tabela Jurídico
+CREATE TABLE jurídico
+(
+	cod_propri INTEGER,
+	CNPJ VARCHAR (15),
+	CONSTRAINT pk_juridico PRIMARY KEY (cod_propri),
+	CONSTRAINT fk_propriJur FOREIGN KEY (cod_propri) REFERENCES proprietário
+);
